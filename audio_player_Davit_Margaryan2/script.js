@@ -30,3 +30,40 @@ let data = {
         "https://www.billboard.com/wp-content/uploads/media/XXXTENTACION-MOONLIGHT-2018-billboard-1548.jpg"
     ]
 }
+
+let song = new Audio()
+window.onload = function() {
+    playSong()
+}
+
+let currentSong = 0
+function playSong() {
+    song.src = data.song[currentSong]
+    let songTitle = document.getElementById("songTitle")
+    songTitle.textContent = data.title[currentSong]
+    let img = document.getElementsByClassName("row1")
+    img[0].style.backgroundImage = "url(" + data.poster[currentSong] +")"
+    let main = document.getElementsByClassName("main")
+    main[0].style.backgroundImage = "url(" + data.poster[currentSong] +")"
+    song.play()
+}
+
+function playOrPauseSong() {
+    let play = document.getElementById("play")
+
+    if(song.paused) {
+        song.play()
+        play.src = "images/pause.png"
+    }else {
+        song.pause()
+        play.src = "images/play-button-arrowhead.png"
+    }
+}
+
+
+song.addEventListener("timeupdate", function () {
+    let fill = document.getElementsByClassName("fill")
+
+        let position = song.currentTime/song.duration
+    fill[0].style.marginLeft = position *  99 + "%"
+})
