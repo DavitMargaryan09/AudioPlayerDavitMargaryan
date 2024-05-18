@@ -66,4 +66,98 @@ song.addEventListener("timeupdate", function () {
 
         let position = song.currentTime/song.duration
     fill[0].style.marginLeft = position *  99 + "%"
+
+    convertTime(Math.round(song.currentTime))
+
+
+    if(song.ended) {
+        next()
+    }
 })
+
+function convertTime(seconds) {
+    let currentTime = document.getElementsByClassName("currentTime")
+    
+
+    let min = Math.floor(seconds/60)
+    let sec = Math.floor(seconds%60)
+
+
+    min = (min < 10) ? "0" + min : min
+    sec = (sec < 10) ? "0" + sec : sec
+
+    currentTime[0].textContent = min + ":" + sec
+    // if(sec < 10) {
+    //     "0" + sec
+    // } else {
+    //     sec
+    // }
+
+    totalTime(Math.round(song.duration))
+}
+
+
+function totalTime(seconds) {
+    let currentTime = document.getElementsByClassName("currentTime")
+    
+
+    let min = Math.floor(seconds/60)
+    let sec = Math.floor(seconds%60)
+
+
+    min = (min < 10) ? "0" + min : min
+    sec = (sec < 10) ? "0" + sec : sec
+    
+    currentTime[0].textContent += " / " + min + ":" + sec
+}
+
+
+function prev() {
+    currentSong--
+    let play = document.getElementById("play")
+    if(currentSong < 0) {
+        currentSong = data.song.length - 1
+        
+    }
+
+    playSong()
+    play.src = "images/pause.png"
+}
+
+function next() {
+    currentSong++
+    let play = document.getElementById("play")
+    if(currentSong > data.song.length - 1) {
+        currentSong = 0
+        
+    }
+
+    playSong()
+    play.src = "images/pause.png"
+}
+
+function mute() {
+    let mute = document.getElementById("mute")
+
+    if(song.muted) {
+        song.muted = false
+        mute.src = "images/volume.png"
+    }else {
+        song.muted = true
+        mute.src = "images/volume-mute.png"
+    }
+}
+
+function decrease() {
+    let mute = document.getElementById("mute")
+    song.volume -= 0.2
+
+    if(song.volume <= 0.1) {
+        mute.src = "images/volume-mute.png"
+    } 
+}
+
+function increase() {
+    song.volume += 0.2
+
+}
