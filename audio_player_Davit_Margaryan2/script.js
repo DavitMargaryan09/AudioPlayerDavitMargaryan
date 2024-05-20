@@ -1,5 +1,6 @@
-var handle = document.getElementsByClassName("handle")
-
+const handle = document.querySelector('.handle');
+    const fill = document.querySelector('.fill');
+    const main = document.getElementById('main'); 
 
 let data = {
     title : [
@@ -182,5 +183,16 @@ function increase() {
     }
 }
 
+
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = song.duration;
+  
+    song.currentTime = (clickX / width) * duration;
+  }
+   
+
+handle.addEventListener('click', setProgress);
 
 
