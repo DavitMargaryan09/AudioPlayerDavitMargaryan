@@ -35,7 +35,7 @@ let data = {
         "https://downloadwap.com/thumbs3/screensavers/d/new/fcelebs/michael_joseph_jackson-329739.gif",
         "https://m.media-amazon.com/images/I/41cLDavIUTL._AC_UF894,1000_QL80_.jpg",
         "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_616x353.jpg?t=1695131205",
-        "https://i.makeagif.com/media/10-19-2022/mgq2w1.gif",
+        "https://media0.giphy.com/media/tqfS3mgQU28ko/giphy.gif?cid=6c09b952y1qu3masu18qaqm6093uap198yocblgolo5qagdq&ep=v1_gifs_search&rid=giphy.gif&ct=g",
         "https://n1s2.hsmedia.ru/04/3a/7a/043a7a05c46ec85dcce4a861ed1d006f/1200x630_0xac120003_2985818291660227758.png",
         "https://i1.sndcdn.com/artworks-N4VzVPwHFSlKDij1-bcOJUg-t500x500.jpg",
         "https://phuketnews.phuketindex.com/wp-content/uploads/2011/03/27.jpg",
