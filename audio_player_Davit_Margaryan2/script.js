@@ -1,3 +1,6 @@
+var handle = document.getElementsByClassName("handle")
+
+
 let data = {
     title : [
         "Michael Jackson - Billie jean", 
@@ -10,7 +13,8 @@ let data = {
         "XXXtentacion - Moonlight",
         "Eminem, Nate Dogg – 'Till I Collapse",
         "Doja Cat – Woman",
-        "Michael Jackson – Stranger in Moscow"
+        "Michael Jackson - Smooth Criminal",
+        "Aram mp3 - Not Alone"
     ],
     song : [
         "music/Michael Jackson - Billie Jean.mp3",
@@ -23,7 +27,8 @@ let data = {
         "music/XXXtentacion - Moonlight.mp3",
         "music/Eminem, Nate Dogg – 'Till I Collapse.mp3",
         "music/Doja Cat – Woman.mp3",
-        "music/Michael Jackson – Stranger in Moscow.mp3"
+        "music/Michael Jackson - Smooth Criminal.mp3",
+        "music/Aram mp3 - Not Alone.mp3"
     ],
     poster : [
         "https://downloadwap.com/thumbs3/screensavers/d/new/fcelebs/michael_joseph_jackson-329739.gif",
@@ -36,7 +41,8 @@ let data = {
         "https://www.billboard.com/wp-content/uploads/media/XXXTENTACION-MOONLIGHT-2018-billboard-1548.jpg",
         "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f8a240bb-b9ea-4c45-9f41-ac71cb09fe1a/d9gnm1p-d55d4473-5c09-466d-9278-94f3533a2216.jpg/v1/fill/w_1024,h_1409,q_75,strp/eminem_poster_art_by_kibgraphics_d9gnm1p-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQwOSIsInBhdGgiOiJcL2ZcL2Y4YTI0MGJiLWI5ZWEtNGM0NS05ZjQxLWFjNzFjYjA5ZmUxYVwvZDlnbm0xcC1kNTVkNDQ3My01YzA5LTQ2NmQtOTI3OC05NGYzNTMzYTIyMTYuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.n1ubTSx5h5EIwq2_tZOZaCZZam91vh1HhiQmdgKHnzo",
         "https://i.pinimg.com/originals/62/0c/5a/620c5a819f8b8fa2a75575edf1d155ec.gif",
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/24945872-6dda-46ed-b196-b7ed15e09825/d37m1gs-d13c1c37-7369-47cc-896f-fd9a137a5990.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI0OTQ1ODcyLTZkZGEtNDZlZC1iMTk2LWI3ZWQxNWUwOTgyNVwvZDM3bTFncy1kMTNjMWMzNy03MzY5LTQ3Y2MtODk2Zi1mZDlhMTM3YTU5OTAuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fwrOXL931c7rn3Hivnk4myMQmyM0-WXLXBMIKMXDKgA"
+        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/24945872-6dda-46ed-b196-b7ed15e09825/d37m1gs-d13c1c37-7369-47cc-896f-fd9a137a5990.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI0OTQ1ODcyLTZkZGEtNDZlZC1iMTk2LWI3ZWQxNWUwOTgyNVwvZDM3bTFncy1kMTNjMWMzNy03MzY5LTQ3Y2MtODk2Zi1mZDlhMTM3YTU5OTAuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fwrOXL931c7rn3Hivnk4myMQmyM0-WXLXBMIKMXDKgA",
+        "https://upload.wikimedia.org/wikipedia/commons/4/41/Aram_Mp3%2C_ESC2014_Armenia_1st_press_conference_02.jpg"
     ]
 }
 
@@ -171,10 +177,10 @@ function increase() {
     let mute = document.getElementById("mute")
     song.volume += 0.2
 
-    if(song.muted = false && song.volume <= 0.1) {
-        song.volume = 0.2
-    }
     if(song.volume > 0.1) {
         mute.src = "images/volume.png"
     }
 }
+
+
+
