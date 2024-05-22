@@ -1,10 +1,11 @@
 const handle = document.querySelector('.handle');
     const fill = document.querySelector('.fill');
     const main = document.getElementById('main'); 
+    let previousDuration = 0
 
 let data = {
     title : [
-        "Michael Jackson - Billie jean", 
+        "Michael Jackson - Billie jean ", 
         "Eminem - Mockingbird", 
         "GTA IV Theme Song",
         "Modern Talking - Cheri Cheri Lady",
@@ -32,7 +33,7 @@ let data = {
         "music/Aram mp3 - Not Alone.mp3"
     ],
     poster : [
-        "https://downloadwap.com/thumbs3/screensavers/d/new/fcelebs/michael_joseph_jackson-329739.gif",
+        "https://hips.hearstapps.com/hmg-prod/images/michael-jackson-performs-in-concert-circa-1986-news-photo-1690832280.jpg?crop=0.694xw:1.00xh;0.117xw,0&resize=1200:*",
         "https://m.media-amazon.com/images/I/41cLDavIUTL._AC_UF894,1000_QL80_.jpg",
         "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/capsule_616x353.jpg?t=1695131205",
         "https://media0.giphy.com/media/tqfS3mgQU28ko/giphy.gif?cid=6c09b952y1qu3masu18qaqm6093uap198yocblgolo5qagdq&ep=v1_gifs_search&rid=giphy.gif&ct=g",
@@ -41,7 +42,7 @@ let data = {
         "https://phuketnews.phuketindex.com/wp-content/uploads/2011/03/27.jpg",
         "https://www.billboard.com/wp-content/uploads/media/XXXTENTACION-MOONLIGHT-2018-billboard-1548.jpg",
         "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f8a240bb-b9ea-4c45-9f41-ac71cb09fe1a/d9gnm1p-d55d4473-5c09-466d-9278-94f3533a2216.jpg/v1/fill/w_1024,h_1409,q_75,strp/eminem_poster_art_by_kibgraphics_d9gnm1p-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQwOSIsInBhdGgiOiJcL2ZcL2Y4YTI0MGJiLWI5ZWEtNGM0NS05ZjQxLWFjNzFjYjA5ZmUxYVwvZDlnbm0xcC1kNTVkNDQ3My01YzA5LTQ2NmQtOTI3OC05NGYzNTMzYTIyMTYuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.n1ubTSx5h5EIwq2_tZOZaCZZam91vh1HhiQmdgKHnzo",
-        "https://i.pinimg.com/originals/62/0c/5a/620c5a819f8b8fa2a75575edf1d155ec.gif",
+        "https://img.freepik.com/free-photo/abstract-watercolor-guitar-exploding-with-colorful-motion-generated-by-ai_188544-19725.jpg",
         "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/24945872-6dda-46ed-b196-b7ed15e09825/d37m1gs-d13c1c37-7369-47cc-896f-fd9a137a5990.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI0OTQ1ODcyLTZkZGEtNDZlZC1iMTk2LWI3ZWQxNWUwOTgyNVwvZDM3bTFncy1kMTNjMWMzNy03MzY5LTQ3Y2MtODk2Zi1mZDlhMTM3YTU5OTAuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fwrOXL931c7rn3Hivnk4myMQmyM0-WXLXBMIKMXDKgA",
         "https://upload.wikimedia.org/wikipedia/commons/4/41/Aram_Mp3%2C_ESC2014_Armenia_1st_press_conference_02.jpg"
     ]
@@ -116,7 +117,8 @@ function convertTime(seconds) {
 function totalTime(seconds) {
     let currentTime = document.getElementsByClassName("currentTime")
     
-
+    if(!isNaN(song.duration)) {
+        previousDuration = song.duration
     let min = Math.floor(seconds/60)
     let sec = Math.floor(seconds%60)
 
@@ -125,6 +127,23 @@ function totalTime(seconds) {
     sec = (sec < 10) ? "0" + sec : sec
     
     currentTime[0].textContent += " / " + min + ":" + sec
+    
+        
+    }
+
+    if(isNaN(song.duration)) {
+        
+    let min = Math.floor(previousDuration/60)
+    let sec = Math.floor(previousDuration%60)
+
+
+    min = (min < 10) ? "0" + min : min
+    sec = (sec < 10) ? "0" + sec : sec
+    
+    currentTime[0].textContent += " / " + min + ":" + sec
+    
+        
+    }
 }
 
 
