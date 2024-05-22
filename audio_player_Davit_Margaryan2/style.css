@@ -20,16 +20,21 @@ background-position-y: 50%;
 }
   
 .player {
-    background-color: rgba(91, 91, 144, 0.6);
+    backdrop-filter: blur(5.5px);
+    background-color: rgba(255, 255, 255, 0.75);
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     height: 370px;
     width: 500px;
-
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 25px;
-    box-shadow: 2px 4px 10px 10px aqua;
+    box-shadow: 4px 4px 10px 10px rgb(187, 110, 110);
+    background: rgba(255, 255, 255, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.34);
 }
 
 .row1{
@@ -61,8 +66,8 @@ background-position-y: 50%;
     overflow: hidden;
     height: 39%;
     width: 100%;
-    background-color: rgba(167, 132, 56, 0.442);
-
+    background-color: rgba(255, 102, 102, 0.3);
+    color: #232323;
 }
 
 .play {
@@ -132,7 +137,7 @@ background-position-y: 50%;
     height: 100%;
     margin-left: 35px;
     margin-top: -27px;
-    color: purple;
+    color: rgb(0, 38, 95);
 }
 
 #decrease {
